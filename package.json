@@ -1,0 +1,18 @@
+{
+  "name": "varlenyx",
+  "version": "0.1.0",
+  "private": true,
+  "description": "VARLENYX digital ecosystem monorepo — governed by docs/MASTER_BUILD_ORDER.md",
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "scripts": {
+    "dev": "npm run dev --workspace=apps/web",
+    "build": "npm run build --workspace=apps/web",
+    "clean": "rm -rf apps/web/_site apps/web/.cache"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

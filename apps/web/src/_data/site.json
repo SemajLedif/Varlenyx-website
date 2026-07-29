@@ -1,0 +1,58 @@
+{
+  "name": "VARLENYX",
+  "tagline": "The technology of life",
+  "strategicTagline": "Building Intelligent Health Infrastructure",
+  "nav": [
+    { "label": "Company", "url": "/company/" },
+    { "label": "Ecosystems", "url": "/ecosystems/" },
+    { "label": "Science & Technology", "url": "/science-technology/" },
+    { "label": "Healthcare", "url": "/healthcare/" },
+    { "label": "Research", "url": "/research/" },
+    { "label": "Trust", "url": "/trust/" },
+    { "label": "Insights", "url": "/insights/" }
+  ],
+  "footer": [
+    {
+      "heading": "Company",
+      "links": [
+        { "label": "About", "url": "/company/" },
+        { "label": "Leadership", "url": "/company/leadership/" },
+        { "label": "Careers", "url": "/company/careers/" }
+      ]
+    },
+    {
+      "heading": "Ecosystems",
+      "links": [
+        { "label": "NOVELA", "url": "/ecosystems/novela/" },
+        { "label": "Future Platforms", "url": "/ecosystems/" }
+      ]
+    },
+    {
+      "heading": "Science & Technology",
+      "links": [
+        { "label": "Medicine", "url": "/science-technology/medicine/" },
+        { "label": "Biotechnology", "url": "/science-technology/biotechnology/" },
+        { "label": "Artificial Intelligence", "url": "/science-technology/artificial-intelligence/" },
+        { "label": "Genomics", "url": "/science-technology/genomics/" }
+      ]
+    },
+    {
+      "heading": "Healthcare & Research",
+      "links": [
+        { "label": "Patients", "url": "/healthcare/patients/" },
+        { "label": "Clinicians", "url": "/healthcare/clinicians/" },
+        { "label": "Publications", "url": "/research/publications/" },
+        { "label": "Collaborations", "url": "/research/collaborations/" }
+      ]
+    },
+    {
+      "heading": "Trust & Connect",
+      "links": [
+        { "label": "Privacy", "url": "/trust/privacy/" },
+        { "label": "Security", "url": "/trust/security/" },
+        { "label": "Partnerships", "url": "/partnerships/" },
+        { "label": "Contact", "url": "/contact/" }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,215 @@
+/* VARLENYX components — MBO §7 component inventory */
+
+/* ---- Buttons ---- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: var(--space-3) var(--space-5);
+  border-radius: var(--radius-sm);
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: transform var(--motion-duration) var(--motion-ease),
+              background var(--motion-duration) var(--motion-ease),
+              color var(--motion-duration) var(--motion-ease);
+}
+.btn-primary {
+  background: var(--gradient-signature);
+  color: var(--color-void);
+}
+.btn-primary:hover { transform: translateY(-1px); text-decoration: none; }
+
+.btn-secondary {
+  background: transparent;
+  border-color: var(--color-mist);
+  color: var(--color-text-light);
+}
+.btn-secondary:hover { border-color: var(--color-gradient-cyan); text-decoration: none; }
+
+.btn-ghost {
+  background: transparent;
+  color: var(--color-gradient-cyan);
+  padding-inline: 0;
+}
+
+/* ---- Nav ---- */
+.site-nav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(8, 11, 20, 0.7);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid transparent;
+  transition: background var(--motion-duration) var(--motion-ease),
+              border-color var(--motion-duration) var(--motion-ease);
+}
+.site-nav.is-scrolled {
+  background: var(--color-void);
+  border-bottom-color: var(--color-mist);
+}
+.site-nav__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-block: var(--space-3);
+}
+.site-nav__logo { display: flex; align-items: center; gap: var(--space-2); }
+.site-nav__logo img { height: 32px; width: auto; }
+.site-nav__logo-word {
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--color-text-light);
+  font-size: 1.1rem;
+}
+.site-nav__links {
+  display: none;
+  gap: var(--space-6);
+  list-style: none;
+  margin: 0; padding: 0;
+}
+.site-nav__links a {
+  color: var(--color-text-light);
+  font-size: 0.95rem;
+}
+.site-nav__links a:hover { color: var(--color-gradient-cyan); }
+@media (min-width: 900px) {
+  .site-nav__links { display: flex; align-items: center; }
+}
+.site-nav__toggle {
+  display: inline-flex;
+  background: none;
+  border: 1px solid var(--color-mist);
+  border-radius: var(--radius-sm);
+  color: var(--color-text-light);
+  padding: var(--space-2) var(--space-3);
+}
+@media (min-width: 900px) {
+  .site-nav__toggle { display: none; }
+}
+.site-nav__mobile-panel {
+  display: none;
+  flex-direction: column;
+  gap: var(--space-4);
+  padding: var(--space-5);
+  background: var(--color-void);
+  border-top: 1px solid var(--color-mist);
+}
+.site-nav__mobile-panel.is-open { display: flex; }
+@media (min-width: 900px) {
+  .site-nav__mobile-panel { display: none !important; }
+}
+
+/* ---- Footer ---- */
+.site-footer {
+  background: var(--color-void);
+  border-top: 1px solid var(--color-mist);
+  padding-block: var(--space-9) var(--space-6);
+}
+.site-footer__grid {
+  display: grid;
+  gap: var(--space-6);
+  grid-template-columns: repeat(2, 1fr);
+}
+@media (min-width: 768px) {
+  .site-footer__grid { grid-template-columns: repeat(5, 1fr); }
+}
+.site-footer__col h4 {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-text-muted-dark);
+  margin-bottom: var(--space-3);
+}
+.site-footer__col ul { list-style: none; margin: 0; padding: 0; }
+.site-footer__col li { margin-bottom: var(--space-2); }
+.site-footer__col a { color: var(--color-text-light); font-size: 0.9rem; }
+.site-footer__bottom {
+  margin-top: var(--space-8);
+  padding-top: var(--space-5);
+  border-top: 1px solid var(--color-mist);
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  justify-content: space-between;
+  font-size: 0.8rem;
+  color: var(--color-text-muted-dark);
+}
+
+/* ---- Hero variants (MBO §7 component inventory) ---- */
+.hero {
+  position: relative;
+  padding-block: var(--space-10) var(--space-9);
+  overflow: hidden;
+  background: var(--color-void);
+  color: var(--color-text-light);
+}
+.hero__glow {
+  position: absolute;
+  inset: -20% -10% auto -10%;
+  height: 700px;
+  background: radial-gradient(circle at 70% 30%, rgba(123,92,250,0.35), transparent 60%),
+              radial-gradient(circle at 30% 60%, rgba(47,216,232,0.25), transparent 55%);
+  pointer-events: none;
+  z-index: 0;
+}
+.hero__content { position: relative; z-index: 1; max-width: 720px; }
+.hero__eyebrow { margin-bottom: var(--space-4); }
+.hero__actions { display: flex; gap: var(--space-4); flex-wrap: wrap; margin-top: var(--space-6); }
+
+.hero--scientific { background: var(--color-ink); }
+.hero--ecosystem .hero__glow {
+  background: radial-gradient(circle at 80% 20%, rgba(47,216,232,0.3), transparent 60%);
+}
+
+/* ---- Content card ---- */
+.card {
+  background: var(--color-ink);
+  border: 1px solid var(--color-mist);
+  border-radius: var(--radius-md);
+  padding: var(--space-5);
+  transition: border-color var(--motion-duration) var(--motion-ease);
+}
+.card:hover { border-color: var(--color-gradient-cyan); }
+.card .eyebrow { display: block; margin-bottom: var(--space-2); }
+.card h3 { margin-bottom: var(--space-2); }
+.card p { color: var(--color-text-muted-dark); font-size: 0.95rem; }
+.card__link { display: inline-block; margin-top: var(--space-3); font-size: 0.9rem; }
+
+/* card on light background (Research/Trust pages) */
+.theme-light .card {
+  background: #fff;
+  border-color: var(--color-hairline);
+}
+.theme-light .card p { color: var(--color-text-muted-light); }
+
+/* ---- CTA banner ---- */
+.cta-banner {
+  background: var(--gradient-signature);
+  border-radius: var(--radius-lg);
+  padding: var(--space-8) var(--space-6);
+  color: var(--color-void);
+  text-align: center;
+}
+.cta-banner h2 { color: var(--color-void); }
+.cta-banner .btn-primary {
+  background: var(--color-void);
+  color: var(--color-text-light);
+}
+
+/* ---- Stat panel ---- */
+.stat { text-align: left; }
+.stat__value {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  background: var(--gradient-signature);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  display: block;
+}
+.stat__label { color: var(--color-text-muted-dark); font-size: 0.9rem; }

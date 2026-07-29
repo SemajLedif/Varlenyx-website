@@ -1,0 +1,6 @@
+node_modules/
+apps/web/_site/
+apps/web/.cache/
+.DS_Store
+*.log
+.env

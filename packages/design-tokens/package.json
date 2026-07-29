@@ -1,0 +1,8 @@
+{
+  "name": "@varlenyx/design-tokens",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Locked design tokens from MASTER_BUILD_ORDER.md §7",
+  "main": "tokens.json",
+  "style": "tokens.css"
+}

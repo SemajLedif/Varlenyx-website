@@ -1,0 +1,16 @@
+{# VARLENYX hero — MBO §7 component inventory: 3 variants #}
+{# Params: heroVariant ("corporate"|"scientific"|"ecosystem"), heroEyebrow, heroTitle, heroSubhead, heroPrimaryCta {label,url}, heroSecondaryCta {label,url} #}
+<header class="hero {% if heroVariant == 'scientific' %}hero--scientific{% elif heroVariant == 'ecosystem' %}hero--ecosystem{% endif %}">
+  <div class="hero__glow" aria-hidden="true"></div>
+  <div class="container hero__content">
+    {% if heroEyebrow %}<p class="eyebrow hero__eyebrow">{{ heroEyebrow }}</p>{% endif %}
+    <h1>{{ heroTitle }}</h1>
+    {% if heroSubhead %}<p style="font-size:1.15rem; color: var(--color-text-muted-dark); max-width: 60ch;">{{ heroSubhead }}</p>{% endif %}
+    {% if heroPrimaryCta or heroSecondaryCta %}
+    <div class="hero__actions">
+      {% if heroPrimaryCta %}<a href="{{ heroPrimaryCta.url }}" class="btn btn-primary">{{ heroPrimaryCta.label }}</a>{% endif %}
+      {% if heroSecondaryCta %}<a href="{{ heroSecondaryCta.url }}" class="btn btn-secondary">{{ heroSecondaryCta.label }}</a>{% endif %}
+    </div>
+    {% endif %}
+  </div>
+</header>

@@ -1,0 +1,31 @@
+{# VARLENYX nav — MBO §4 primary navigation (7 items + action) #}
+<a href="#main" class="skip-link">Skip to content</a>
+<nav class="site-nav" id="site-nav" aria-label="Primary">
+  <div class="container site-nav__inner">
+    <a href="/" class="site-nav__logo" aria-label="VARLENYX home">
+      <img src="/assets/images/varlenyx-icon.png" alt="" width="32" height="32">
+      <span class="site-nav__logo-word">VARLENYX</span>
+    </a>
+
+    <ul class="site-nav__links">
+      {% for item in site.nav %}
+      <li><a href="{{ item.url }}">{{ item.label }}</a></li>
+      {% endfor %}
+    </ul>
+
+    <a href="/contact/" class="btn btn-secondary" style="display:none" id="nav-contact-desktop">Contact</a>
+
+    <button class="site-nav__toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-mobile-panel">
+      Menu
+    </button>
+  </div>
+
+  <div class="site-nav__mobile-panel" id="nav-mobile-panel">
+    <ul class="site-nav__links" style="display:flex; flex-direction:column; gap: var(--space-4);">
+      {% for item in site.nav %}
+      <li><a href="{{ item.url }}">{{ item.label }}</a></li>
+      {% endfor %}
+    </ul>
+    <a href="/contact/" class="btn btn-primary">Contact</a>
+  </div>
+</nav>

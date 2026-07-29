@@ -1,0 +1,27 @@
+{# VARLENYX footer — MBO §4 locked footer structure #}
+<footer class="site-footer">
+  <div class="container">
+    <div class="site-footer__grid">
+      {% for col in site.footer %}
+      <div class="site-footer__col">
+        <h4>{{ col.heading }}</h4>
+        <ul>
+          {% for link in col.links %}
+          <li><a href="{{ link.url }}">{{ link.label }}</a></li>
+          {% endfor %}
+        </ul>
+      </div>
+      {% endfor %}
+    </div>
+
+    <div class="site-footer__bottom">
+      <span>© {{ "now" | date("Y") }} VARLENYX. The technology of life.</span>
+      <span>
+        <a href="/trust/privacy/">Privacy</a> ·
+        <a href="/trust/security/">Security</a> ·
+        <a href="/legal/terms/">Terms</a> ·
+        <a href="/legal/accessibility/">Accessibility</a>
+      </span>
+    </div>
+  </div>
+</footer>

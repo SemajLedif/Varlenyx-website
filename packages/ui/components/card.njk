@@ -1,0 +1,8 @@
+{# VARLENYX content card — MBO §6 card content model #}
+{# Params: card = {tag, title, summary, url, linkLabel} #}
+<div class="card">
+  {% if card.tag %}<span class="eyebrow">{{ card.tag }}</span>{% endif %}
+  <h3>{{ card.title }}</h3>
+  <p>{{ card.summary }}</p>
+  {% if card.url %}<a href="{{ card.url }}" class="card__link">{{ card.linkLabel or "Explore →" }}</a>{% endif %}
+</div>

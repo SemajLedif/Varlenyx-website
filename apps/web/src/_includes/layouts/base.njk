@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ title }} · {{ site.name }}</title>
+  <meta name="description" content="{{ description or 'VARLENYX — Building intelligent health infrastructure for the future of healthcare.' }}">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Allura&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/assets/css/tokens.css">
+  <link rel="stylesheet" href="/assets/css/base.css">
+  <link rel="stylesheet" href="/assets/css/components.css">
+  <link rel="icon" href="/assets/images/varlenyx-icon.png">
+</head>
+<body class="{{ bodyClass or '' }}">
+  {% include "nav.njk" %}
+
+  <main id="main">
+    {% block content %}{{ content | safe }}{% endblock %}
+  </main>
+
+  {% include "footer.njk" %}
+
+  <script src="/assets/js/main.js"></script>
+</body>
+</html>

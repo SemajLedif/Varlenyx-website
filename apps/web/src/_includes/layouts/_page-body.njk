@@ -1,0 +1,39 @@
+{# Shared rendering block included by every type-specific layout.
+   Pages supply frontmatter: hero {eyebrow,title,subhead,primaryCta,secondaryCta},
+   sections [{heading, body, cards:[{tag,title,summary,url}], theme}], cta {title,body,primaryCta,secondaryCta} #}
+
+{% set heroVariant = hero.variant %}
+{% set heroEyebrow = hero.eyebrow %}
+{% set heroTitle = hero.title %}
+{% set heroSubhead = hero.subhead %}
+{% set heroPrimaryCta = hero.primaryCta %}
+{% set heroSecondaryCta = hero.secondaryCta %}
+{% include "hero.njk" %}
+
+{% for section in sections %}
+<section class="section {% if section.theme == 'light' %}theme-light{% endif %}" style="{% if section.theme == 'light' %}background:var(--color-paper); color:var(--color-text-dark);{% endif %}">
+  <div class="container">
+    {% if section.eyebrow %}<p class="eyebrow">{{ section.eyebrow }}</p>{% endif %}
+    {% if section.heading %}<h2>{{ section.heading }}</h2>{% endif %}
+    {% if section.body %}<p>{{ section.body }}</p>{% endif %}
+
+    {% if section.cards %}
+    <div class="grid" style="margin-top: var(--space-6);">
+      {% for card in section.cards %}
+      <div style="grid-column: span 4;">
+        {% include "card.njk" %}
+      </div>
+      {% endfor %}
+    </div>
+    {% endif %}
+  </div>
+</section>
+{% endfor %}
+
+{% if cta %}
+{% set title = cta.title %}
+{% set body = cta.body %}
+{% set primaryCta = cta.primaryCta %}
+{% set secondaryCta = cta.secondaryCta %}
+{% include "cta-banner.njk" %}
+{% endif %}

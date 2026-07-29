@@ -1,0 +1,65 @@
+/*
+  VARLENYX DESIGN TOKENS
+  Source of truth: docs/MASTER_BUILD_ORDER.md §7
+  Do not edit values here without updating the MBO first.
+*/
+
+:root {
+  /* ---- Color: dark surfaces (brand-primary, MBO §7) ---- */
+  --color-void: #080B14;        /* primary dark background: hero, nav, footer */
+  --color-ink: #0F1420;         /* secondary dark surface: cards/panels on dark */
+  --color-mist: #232838;        /* borders/dividers on dark surfaces */
+
+  /* ---- Color: light surfaces (dense reading contexts) ---- */
+  --color-paper: #F7F8FA;       /* light-mode background: Research, Trust, articles */
+  --color-hairline: #E4E7ED;    /* borders/dividers on light surfaces */
+
+  /* ---- Color: text ---- */
+  --color-text-light: #F5F6F8;  /* primary text on dark backgrounds */
+  --color-text-dark: #10131C;   /* primary text on light backgrounds */
+  --color-text-muted-dark: #B7BCC8;   /* secondary text on dark */
+  --color-text-muted-light: #565C6B;  /* secondary text on light */
+
+  /* ---- Color: signature gradient (logo-derived, MBO §1a/§7) ---- */
+  --color-gradient-violet: #7B5CFA;
+  --color-gradient-cyan: #2FD8E8;
+  --gradient-signature: linear-gradient(135deg, var(--color-gradient-violet) 0%, var(--color-gradient-cyan) 100%);
+
+  /* ---- Typography ---- */
+  --font-display: "Space Grotesk", "Sora", sans-serif;   /* headlines, wide tracking */
+  --font-body: "Inter", "General Sans", sans-serif;       /* body copy, UI, nav */
+  --font-mono: "IBM Plex Mono", monospace;                /* data, tags, eyebrows */
+  --font-script: "Allura", cursive;                       /* tagline ONLY — never body/UI */
+
+  /* ---- Spacing scale (MBO §7) ---- */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+  --space-9: 96px;
+  --space-10: 128px;
+
+  /* ---- Radius ---- */
+  --radius-sm: 4px;   /* inputs */
+  --radius-md: 8px;   /* cards */
+  --radius-lg: 16px;  /* hero panels */
+
+  /* ---- Motion ("Organic Precision", MBO §7) ---- */
+  --motion-duration: 400ms;
+  --motion-ease: cubic-bezier(0.16, 1, 0.3, 1); /* calm ease-out, no bounce */
+
+  /* ---- Grid (MBO §7) ---- */
+  --grid-columns-desktop: 12;
+  --grid-columns-tablet: 8;
+  --grid-columns-mobile: 4;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --motion-duration: 0ms;
+  }
+}

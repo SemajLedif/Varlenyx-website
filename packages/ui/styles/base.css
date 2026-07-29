@@ -1,0 +1,111 @@
+/* VARLENYX base styles — MBO §7, §13 (accessibility) */
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  background: var(--color-void);
+  color: var(--color-text-light);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+body.theme-light {
+  background: var(--color-paper);
+  color: var(--color-text-dark);
+}
+
+img, svg { max-width: 100%; display: block; }
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  letter-spacing: 0.01em;
+  line-height: 1.15;
+  margin: 0 0 var(--space-4);
+}
+
+h1 { font-size: clamp(2.25rem, 5vw, 4rem); letter-spacing: 0.02em; }
+h2 { font-size: clamp(1.75rem, 3.2vw, 2.5rem); }
+h3 { font-size: clamp(1.25rem, 2vw, 1.5rem); }
+
+p { margin: 0 0 var(--space-4); max-width: 65ch; }
+
+a {
+  color: var(--color-gradient-cyan);
+  text-decoration: none;
+}
+a:hover, a:focus-visible { text-decoration: underline; }
+
+/* visible focus state everywhere — MBO §13 accessibility */
+:focus-visible {
+  outline: 2px solid var(--color-gradient-cyan);
+  outline-offset: 3px;
+}
+
+.eyebrow {
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.75rem;
+  color: var(--color-gradient-cyan);
+}
+
+.script-accent {
+  font-family: var(--font-script);
+  font-size: 1.5rem;
+  background: var(--gradient-signature);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* ---- Layout primitives ---- */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin-inline: auto;
+  padding-inline: var(--space-5);
+}
+
+.section {
+  padding-block: var(--space-9);
+}
+
+.grid {
+  display: grid;
+  gap: var(--space-5);
+  grid-template-columns: repeat(var(--grid-columns-mobile), 1fr);
+}
+@media (min-width: 768px) {
+  .grid { grid-template-columns: repeat(var(--grid-columns-tablet), 1fr); }
+}
+@media (min-width: 1200px) {
+  .grid { grid-template-columns: repeat(var(--grid-columns-desktop), 1fr); }
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px; height: 1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+}
+
+/* skip link — MBO §13 */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  background: var(--color-void);
+  color: var(--color-text-light);
+  padding: var(--space-3) var(--space-4);
+  z-index: 100;
+}
+.skip-link:focus {
+  left: var(--space-4);
+  top: var(--space-4);
+}

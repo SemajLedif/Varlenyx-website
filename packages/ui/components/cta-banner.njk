@@ -1,0 +1,12 @@
+{# VARLENYX CTA banner — full-width closing section #}
+{# Params: title, body, primaryCta {label,url}, secondaryCta {label,url} #}
+<section class="section container">
+  <div class="cta-banner">
+    <h2>{{ title }}</h2>
+    {% if body %}<p style="max-width: 60ch; margin-inline: auto; color: var(--color-ink);">{{ body }}</p>{% endif %}
+    <div class="hero__actions" style="justify-content:center;">
+      {% if primaryCta %}<a href="{{ primaryCta.url }}" class="btn btn-primary">{{ primaryCta.label }}</a>{% endif %}
+      {% if secondaryCta %}<a href="{{ secondaryCta.url }}" class="btn btn-secondary" style="border-color: var(--color-void); color: var(--color-void);">{{ secondaryCta.label }}</a>{% endif %}
+    </div>
+  </div>
+</section>
