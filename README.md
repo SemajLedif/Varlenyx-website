@@ -2,6 +2,8 @@
 
 This repository is governed entirely by **[docs/MASTER_BUILD_ORDER.md](docs/MASTER_BUILD_ORDER.md)** (the "MBO"). If anything in code contradicts that document, the MBO wins — update the MBO first, then the code.
 
+> Note: this repo previously had an earlier project-brief README with a different (pre-MBO) structure and nav. It's preserved for reference at [docs/legacy/ORIGINAL_PROJECT_README.md](docs/legacy/ORIGINAL_PROJECT_README.md) — it has been superseded by the MBO, not deleted.
+
 ## Structure
 
 ```
