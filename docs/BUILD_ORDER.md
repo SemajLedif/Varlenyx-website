@@ -86,16 +86,22 @@
 
 ---
 
-## Open Items Needing Founder Input (blocking real content, not structure)
+## Canonical Content Source — 19 Website Content Documents
 
-These don't block scaffolding/structure work but must be resolved before the affected pages carry real (non-placeholder) content:
+Resolved via the 19 "website content document" knowledge files (company identity, story/vision, founder, products/ecosystem, research, partnerships, careers, contact, trust/legal, About VARLENYX, media assets, NOVELA, technology, governance/ethics, future vision, FAQ, resources/knowledge center, website IA, SEO strategy). These are the approved canonical copy source and must be reviewed before any build step, not just referenced for structure.
 
-1. **Leadership** — real founder/exec names, bios, titles, headshots vs. placeholder policy
-2. **Locations/offices** — real addresses, or pre-launch with no physical presence (affects Contact & Global Presence)
-3. **Research content** — real publications, or placeholder "illustrative" entries clearly marked as such
-4. **Careers** — real open roles, or "join our talent network" holding state
-5. **Photography** — real photos vs. stock (MBO discourages generic stock) vs. AI-generated imagery
-6. **Legal specifics** — real company registration/jurisdiction info vs. generic boilerplate
-7. **Domain/hosting** — live domain and hosting target for Phase M
+**Rule:** Every phase below pulls its real copy directly from these 19 files rather than generating new content. Where a file explicitly states a placeholder policy, the placeholder is used as written (not invented further).
 
-Until answered, affected sections proceed with clearly labeled placeholder content so structure work isn't blocked.
+### Resolved from the 19 files
+
+1. **Leadership** — Placeholder policy confirmed: `[Founder Name]`, generic bio/photo placeholder until public launch (doc 3 — Founder).
+2. **Locations/offices** — No physical presence yet. Global-first positioning; offices "will be announced as the organization expands" (doc 8 — Contact). No address content needed now.
+3. **Research content** — No real publications exist. Official stance is "Research Foundation Phase" — the page communicates direction and philosophy, not a publication archive (doc 5 — Research & Innovation).
+4. **Careers** — No formal open roles yet. Private Beta stance is "join the talent network" — culture/mission content only, no job listings (doc 7 — Careers).
+5. **Photography** — Avoid generic stock imagery. AI-generated imagery permitted only for clearly labeled concept/future illustrations; never implies real facilities, patients, or partnerships (doc 10 — Media Assets & Brand Resources).
+6. **Legal specifics** — No invented registration/jurisdiction info. Use the placeholder statement: details "will be published as formal operational structures are established" (doc 9 — Trust & Legal).
+7. **Core facts locked** — Tagline "The Technology of Life," founded 2025, Private Beta status banner language, placeholder contact routing (hello@ / partnerships@ / research@ / careers@ / media@ / support@varlenyx.com) (doc 1 — Company Identity).
+
+### Still open
+
+- **Domain/hosting** — live domain and hosting target, needed before Phase M (not addressed in the 19 files).
