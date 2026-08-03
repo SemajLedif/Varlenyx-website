@@ -10,7 +10,7 @@
 ## Phase A — Foundation
 
 1. Finish `packages/ui` shared components (buttons, cards, section wrappers, breadcrumb, CTA blocks) per MBO Design System tokens
-2. Verify clean build (`npm install && npm run build`) end-to-end, fix any breakage
+2. ✅ Verify clean build (`npm install && npm run build`) end-to-end, fix any breakage — verified clean (`npm install`: 216 packages, no errors; `npm run build`: 0 errors via Eleventy). Workspace symlinks for `@varlenyx/design-tokens` and `@varlenyx/ui` resolve correctly; passthrough CSS/JS/images copy through from `packages/` with no duplication. No breakage found, no fixes required. Nav/footer links to ~30 not-yet-built section pages are expected at this stage (only homepage exists; those routes fill in through Phases B–K).
 3. Global layout QA: nav, footer, logo, responsive behavior across all 10 layout templates
 
 ## Phase B — Homepage (done) → Company section
