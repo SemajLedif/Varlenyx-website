@@ -1,0 +1,9 @@
+{# VARLENYX button — MBO §7 component inventory: primary / secondary / ghost / text.
+   Standalone component for buttons outside hero/CTA contexts (body copy, card
+   actions, table rows, etc). Hero and CTA banner keep their own inline
+   `.btn btn-*` anchors since those already carry component-specific layout —
+   this partial is the canonical single-button reference for everywhere else.
+   Params: label, url, variant ("primary"|"secondary"|"ghost"|"text", default "primary"), newTab (bool) #}
+<a href="{{ url }}"
+  class="btn btn-{{ variant or 'primary' }}"
+  {% if newTab %}target="_blank" rel="noopener noreferrer"{% endif %}>{{ label }}</a>

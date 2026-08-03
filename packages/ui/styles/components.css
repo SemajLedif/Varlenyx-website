@@ -31,9 +31,51 @@
 
 .btn-ghost {
   background: transparent;
-  color: var(--color-gradient-cyan);
-  padding-inline: 0;
+  border-color: var(--color-mist);
+  color: var(--color-text-light);
 }
+.btn-ghost:hover { border-color: var(--color-gradient-cyan); color: var(--color-gradient-cyan); text-decoration: none; }
+
+.btn-text {
+  background: transparent;
+  color: var(--color-gradient-cyan);
+  padding: 0;
+  font-size: 0.9rem;
+}
+.btn-text:hover { text-decoration: underline; }
+
+/* ---- Breadcrumb ---- */
+.breadcrumb {
+  padding-block: var(--space-4);
+  background: var(--color-void);
+}
+.breadcrumb ol {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+}
+.breadcrumb li { display: flex; align-items: center; gap: var(--space-2); }
+.breadcrumb li:not(:last-child)::after {
+  content: "/";
+  color: var(--color-text-muted-dark);
+}
+.breadcrumb a { color: var(--color-text-muted-dark); }
+.breadcrumb a:hover { color: var(--color-gradient-cyan); text-decoration: none; }
+.breadcrumb [aria-current="page"] { color: var(--color-text-light); }
+
+.theme-light .breadcrumb,
+.breadcrumb.theme-light {
+  background: var(--color-paper);
+}
+.theme-light .breadcrumb li:not(:last-child)::after,
+.theme-light .breadcrumb a { color: var(--color-text-muted-light); }
+.theme-light .breadcrumb [aria-current="page"] { color: var(--color-text-dark); }
 
 /* ---- Nav ---- */
 .site-nav {

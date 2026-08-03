@@ -27,6 +27,27 @@ module.exports = function (eleventyConfig) {
     return d.toISOString();
   });
 
+  // Breadcrumb trail (MBO §7 locked rule: VARLENYX > Section > Subsection).
+  // Auto-derives the "Section" crumb by matching the current page's url
+  // against site.nav. Pages can pass frontmatter `breadcrumb: [{label,url}, ...]`
+  // to supply a fully custom trail instead (see packages/ui/components/breadcrumb.njk).
+  eleventyConfig.addFilter("breadcrumbTrail", (pageUrl, nav, override, pageTitle) => {
+    const trail = [{ label: "VARLENYX", url: "/" }];
+    if (override && override.length) {
+      return trail.concat(override);
+    }
+    const match = (nav || []).find((item) => pageUrl.indexOf(item.url) === 0);
+    if (match) {
+      trail.push({ label: match.label, url: match.url });
+      if (pageUrl !== match.url && pageTitle) {
+        trail.push({ label: pageTitle });
+      }
+    } else if (pageTitle) {
+      trail.push({ label: pageTitle });
+    }
+    return trail;
+  });
+
   return {
     dir: {
       input: "src",

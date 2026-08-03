@@ -1,0 +1,30 @@
+{# VARLENYX breadcrumb — MBO §7 locked rule: every interior page shows
+   VARLENYX > Section > Subsection, so users always know where they are.
+   Skipped entirely on the homepage (page.url == "/").
+   Auto-derives the "Section" crumb by matching page.url against site.nav,
+   and adds a final non-linked "Subsection" crumb from the page's own
+   `title` when the page is deeper than its section landing page.
+   Pages needing a fully custom trail (e.g. a specific subsection label
+   that differs from `title`) can pass frontmatter:
+     breadcrumb:
+       - { label: "Science & Technology", url: "/science-technology/" }
+       - { label: "Medicine & Clinical Innovation" }
+   which overrides the auto-derivation entirely. #}
+{% if page.url != "/" %}
+{% set trail = page.url | breadcrumbTrail(site.nav, breadcrumb, title) %}
+<nav class="breadcrumb" aria-label="Breadcrumb">
+  <div class="container">
+    <ol>
+      {% for crumb in trail %}
+      <li>
+        {% if not crumb.url or loop.last %}
+        <span aria-current="page">{{ crumb.label }}</span>
+        {% else %}
+        <a href="{{ crumb.url }}">{{ crumb.label }}</a>
+        {% endif %}
+      </li>
+      {% endfor %}
+    </ol>
+  </div>
+</nav>
+{% endif %}

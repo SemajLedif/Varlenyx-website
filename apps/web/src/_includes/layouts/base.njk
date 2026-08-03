@@ -18,6 +18,7 @@
   {% include "nav.njk" %}
 
   <main id="main">
+    {% include "breadcrumb.njk" %}
     {% block content %}{{ content | safe }}{% endblock %}
   </main>
 
