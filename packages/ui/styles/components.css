@@ -121,6 +121,10 @@
 @media (min-width: 900px) {
   .site-nav__links { display: flex; align-items: center; }
 }
+.site-nav__contact-desktop { display: none; }
+@media (min-width: 900px) {
+  .site-nav__contact-desktop { display: inline-flex; }
+}
 .site-nav__toggle {
   display: inline-flex;
   background: none;
