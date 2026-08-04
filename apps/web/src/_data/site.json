@@ -17,6 +17,7 @@
       "links": [
         { "label": "About", "url": "/company/" },
         { "label": "Leadership", "url": "/company/leadership/" },
+        { "label": "Culture & Values", "url": "/company/culture/" },
         { "label": "Careers", "url": "/company/careers/" }
       ]
     },
