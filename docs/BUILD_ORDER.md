@@ -29,19 +29,19 @@
 
 ## Phase D — Science & Innovation
 
-12. Science & Innovation landing (domain grid: Medicine, Biotech, Med Engineering, Diagnostics, Pharma, Genomics, AI, Infrastructure)
-13. Individual domain pages (batch: Medicine, Biotechnology, Medical Engineering)
-14. Individual domain pages (batch: Diagnostics, Pharmaceuticals, Genomics)
-15. Individual domain pages (batch: AI, Healthcare Infrastructure, Future Innovation)
+12. ✅ Science & Innovation landing (domain grid: Medicine, Biotech, Med Engineering, Diagnostics, Pharma, Genomics, AI, Infrastructure)
+13. ✅ Individual domain pages (batch: Medicine, Biotechnology, Medical Engineering)
+14. ✅ Individual domain pages (batch: Diagnostics, Pharmaceuticals, Genomics) — built together with step 13's commit
+15. ✅ Individual domain pages (batch: AI, Healthcare Infrastructure) — built together with step 13's commit. "Future Innovation" dropped: it was never part of the locked 8-domain grid in MBO §12/this doc's own step 12, so there is no ninth domain page to build.
 
 ## Phase E — Healthcare
 
-16. Healthcare landing
-17. Audience pages: Patients, Clinicians, Healthcare Organizations, Public Health
+16. ✅ Healthcare landing
+17. ✅ Audience pages: Patients, Clinicians, Healthcare Organizations, Public Health
 
 ## Phase F — Research
 
-18. Research landing (Research Areas, Programs, Collaborations)
+18. ✅ Research landing (Research Areas, Programs, Collaborations)
 19. Publications library page/template
 20. Individual research program page template
 
