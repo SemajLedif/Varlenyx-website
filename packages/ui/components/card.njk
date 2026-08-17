@@ -1,8 +1,12 @@
 {# VARLENYX content card — MBO §6 card content model #}
-{# Params: card = {tag, title, summary, url, linkLabel} #}
+{# Params: card = {tag, title, summary, url, linkLabel, authors, date} #}
+{# authors/date are optional, used by the locked Publication card model (Title, authors, date, one-line abstract) #}
 <div class="card">
   {% if card.tag %}<span class="eyebrow">{{ card.tag }}</span>{% endif %}
   <h3>{{ card.title }}</h3>
+  {% if card.authors or card.date %}
+  <p class="card__meta">{% if card.authors %}{{ card.authors }}{% endif %}{% if card.authors and card.date %} · {% endif %}{% if card.date %}{{ card.date }}{% endif %}</p>
+  {% endif %}
   <p>{{ card.summary }}</p>
   {% if card.url %}<a href="{{ card.url }}" class="card__link">{{ card.linkLabel or "Explore →" }}</a>{% endif %}
 </div>
