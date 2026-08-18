@@ -42,7 +42,7 @@
 ## Phase F — Research
 
 18. ✅ Research landing (Research Areas, Programs, Collaborations)
-19. Publications library page/template
+19. ✅ Publications library page/template
 20. Individual research program page template
 
 ## Phase G — Trust Center
