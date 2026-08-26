@@ -1,0 +1,54 @@
+{% extends "layouts/base.njk" %}
+{# Open Roles page — Step 28: data-driven job listing template + application
+   pathway. Loops over global `openRoles` data (apps/web/src/_data/openRoles.json).
+   When empty (current Private Beta state per canonical doc 07-careers), renders
+   an honest empty state directing candidates to the talent network — never
+   fabricated listings. Narrative sections (Application Pathway, etc.) and the
+   closing CTA reuse the shared section.njk / cta-banner.njk components. #}
+{% block content %}
+{% set heroVariant = hero.variant %}
+{% set heroEyebrow = hero.eyebrow %}
+{% set heroTitle = hero.title %}
+{% set heroSubhead = hero.subhead %}
+{% set heroPrimaryCta = hero.primaryCta %}
+{% set heroSecondaryCta = hero.secondaryCta %}
+{% include "hero.njk" %}
+
+<section class="section">
+  <div class="container">
+    <span class="eyebrow">Open Roles</span>
+    <h2>Current Opportunities</h2>
+    {% if openRoles and openRoles.length > 0 %}
+    <div class="grid" style="margin-top: var(--space-6);">
+      {% for role in openRoles %}
+      <div style="grid-column: span 4;">
+        <div class="card">
+          {% if role.department %}<span class="eyebrow">{{ role.department }}</span>{% endif %}
+          <h3>{{ role.title }}</h3>
+          {% if role.location or role.type %}
+          <p class="card__meta">{% if role.location %}{{ role.location }}{% endif %}{% if role.location and role.type %} · {% endif %}{% if role.type %}{{ role.type }}{% endif %}</p>
+          {% endif %}
+          <p>{{ role.description }}</p>
+          {% if role.applyUrl %}<a href="{{ role.applyUrl }}" class="card__link">Apply →</a>{% endif %}
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    {% else %}
+    <p>There are no open roles at VARLENYX at this time. As a company in Private Beta, hiring opportunities may be limited and vary over time. When new roles open, they will be listed here first.</p>
+    {% endif %}
+  </div>
+</section>
+
+{% for section in sections %}
+{% include "section.njk" %}
+{% endfor %}
+
+{% if cta %}
+{% set title = cta.title %}
+{% set body = cta.body %}
+{% set primaryCta = cta.primaryCta %}
+{% set secondaryCta = cta.secondaryCta %}
+{% include "cta-banner.njk" %}
+{% endif %}
+{% endblock %}
